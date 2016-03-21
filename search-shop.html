@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>圣宝先移动商城</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="application-name" content="圣宝先移动商城">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="www.kwanson.com">
+    <meta name="version" content="v.1.0.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="format-detection" content="telephone=no, address=no">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body>
+<!-- 搜索框 -->
+<section id="mix_search_div" dd_name="搜索浮层" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+    <header id="bd">
+        <header class="con floatsearch">
+            <section class="mix_new_header">
+                <a href="javascript:history.back();" class="mix_back"></a>
+                <form id="index_search_form" method="get" action="" target="_parent" onsubmit="return mix_submit_search();">
+                    <div class="search">
+                        <div class="text_box">
+                            <input id="keyword" name="keyword" type="text" value="" placeholder="搜索店铺" class="keyword text" onkeydown="this.style.color='#404040';" maxlength="70" autocomplete="off">
+                        </div>
+                        <span class="mix_submit"></span>
+                    </div>
+                    <input type="submit" value="搜索" class="mix_filtrate">
+                </form>
+            </section>
+            <section class="mix_search_list" style="display: none;"></section>
+        </header>
+    </header>
+</section>
+<!-- 排序 -->
+<section class="filtrate_term _pre" id="product_sort" title="商品排序">
+    <ul>
+        <li class="on" style="width: 50%;"><a href="javascript:void(0);" name="list_sort_comment">店铺评价</a></li>
+        <li style="width: 50%;"><a href="#" name="list_sort_range">离我最近</a></li>
+    </ul>
+</section>
+<!-- search result -->
+<section class="goods_list _pre" id="goods_list" name="goods_list" title="商品列表">
+    <div class="clearfix">
+        <ul class="clearfix">
+            <li class="search-shop-li">
+                <div class="search-shop-info">
+                    <img src="images/shop-logo.jpg" alt="RMK美妆旗舰店"/>
+                        <span class="search-shop-detail">
+                            <span class="search-shop-name">RMK美妆旗舰店</span>
+                            <span class="search-shop-comment">店铺评价<em>4.9分</em></span>
+                        </span>
+                    <a href="shop.html" class="search-to-shop">进店逛逛</a>
+                    <ul class="search-shop-product">
+                        <li>
+                            <a href="#">
+                                <img src="images/sbx-product.png" alt="产品图"/>
+                                <span class="shop-product-price">￥115.00</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/sbx-product.png" alt="产品图"/>
+                                <span class="shop-product-price">￥115.00</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/sbx-product.png" alt="产品图"/>
+                                <span class="shop-product-price">￥115.00</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="search-shop-li">
+                <div class="search-shop-info">
+                    <img src="images/shop-logo.jpg" alt="RMK美妆旗舰店"/>
+                        <span class="search-shop-detail">
+                            <span class="search-shop-name">RMK美妆旗舰店</span>
+                            <span class="search-shop-comment">店铺评价<em>4.9分</em></span>
+                        </span>
+                    <a href="shop.html" class="search-to-shop">进店逛逛</a>
+                    <ul class="search-shop-product">
+                        <li>
+                            <a href="#">
+                                <img src="images/sbx-product.png" alt="产品图"/>
+                                <span class="shop-product-price">￥115.00</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/sbx-product.png" alt="产品图"/>
+                                <span class="shop-product-price">￥115.00</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/sbx-product.png" alt="产品图"/>
+                                <span class="shop-product-price">￥115.00</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //图片延迟加载
+        $("img.lazy").lazyload({
+            effect : "fadeIn"
+        });
+        //初始化收藏功能
+
+        //初始化加载更多功能
+
+        //筛选浮层显示控制
+        var filtrate = $(".filtrate"), submit = $(".submit,.back");
+        filtrate.bind("click", function () {
+            $("._next").show();
+            $("._pre").hide();
+            window.scrollTo(0, 0);
+        });
+        submit.bind("click", function () {
+            $("._next").hide();
+            $("._pre").show();
+        });
+        $(".select-text").bind("click", function () {
+            $(".select-detail").show();
+        });
+    });
+</script>
+</body>
+</html>
