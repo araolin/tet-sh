@@ -3283,3 +3283,37 @@ li.search-shop-li div{
     border-radius: .2rem;
     padding: .3rem .8rem;
 }
+
+/*文章列表*/
+.article_list{
+    background-color: #ffffff;
+    margin-bottom: 0.25rem;
+}
+.article_list li {
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+.article_list a{
+    display: block;
+}
+.article_list li img{
+    width: 4rem;
+    height: 4rem;
+    float:left;
+    padding: .5rem 1rem;
+}
+.article_list dl{
+    float:left;
+}
+.article_list dl dt{
+    padding-top: .5rem;
+    font-size: .7rem;
+}
+.article_list dl dd{
+    padding-top: 2rem;
+    font-size: .6rem;
+    color: #e1e1e1;
+}
+.article_list dd span{
+    padding-left: 4rem;
+}
